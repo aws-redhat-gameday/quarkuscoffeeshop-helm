@@ -54,7 +54,7 @@ serviceAccount:
   annotations: {}
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: ""
+  name: "quarkuscoffeeshop"
 
 podAnnotations: {}
 
@@ -62,12 +62,12 @@ podSecurityContext: {}
   # fsGroup: 2000
 
 securityContext:
-  # capabilities:
-  #   drop:
-  #   - ALL
+  capabilities:
+    drop:
+    - ALL
   readOnlyRootFilesystem: true
   runAsNonRoot: true
-  # runAsUser: 1000
+  runAsUser: 1000
   allowPrivilegeEscalation: false
   seccompProfile:
     type: "RuntimeDefault"
