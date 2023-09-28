@@ -2,10 +2,11 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# Quarkus Cafe Application Variables
-projectnamespace: quarkuscoffeeshop-demo
-domain: ocp4.example.com
+projectnamespace: quarkus-coffeeshop
+domain: example.id.p1.openshiftapps.com
 kafka_cluster_name: cafe-cluster
+
+# Quarkus Cafe Application Variables
 version:
   barista:  5.0.0-SNAPSHOT
   counter:  5.0.3-SNAPSHOT
@@ -25,7 +26,7 @@ replica_count:
 pgsql_url: 'jdbc:postgresql://coffeeshopdb:5432/coffeeshopdb?currentSchema=coffeeshop'
 pgsql_username: coffeshopadmin
 pgsql_password: 'changepassword'
-storeid: ATLANTA
+storeid: GAMEDAY
 quarkus_log_level: INFO
 quarkuscoffeeshop_log_level: DEBUG
 
@@ -60,14 +61,14 @@ podAnnotations: {}
 podSecurityContext: {}
   # fsGroup: 2000
 
-securityContext: {}
-  allowPrivilegeEscalation: false
+securityContext:
   capabilities:
     drop:
     - ALL
   readOnlyRootFilesystem: true
   runAsNonRoot: true
   runAsUser: 1000
+  allowPrivilegeEscalation: false
   seccompProfile:
     type: "RuntimeDefault"
 service:
