@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 
 projectnamespace: quarkus-coffeeshop
-domain: example.id.p1.openshiftapps.com
-kafka_cluster_name: cafe-cluster
+domain: aws-innovate.bvir.p1.openshiftapps.com
+kafka_boostrap_urls: cafe-cluster-kafka-bootstrap.quarkuscoffeeshop-homeoffice.svc.cluster.local:9092
 
 # Quarkus Cafe Application Variables
 version:
