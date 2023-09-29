@@ -38,7 +38,7 @@ spec:
               protocol: TCP
           env:
             - name: KAFKA_BOOTSTRAP_URLS
-              value: {{ .Values.kafka_cluster_name }}-kafka-bootstrap:9092
+              value: {{ .Values.kafka_boostrap_urls }}
       serviceAccountName: {{ .Values.serviceAccount.name }}
 ---
 apiVersion: apps/v1
@@ -81,7 +81,7 @@ spec:
               protocol: TCP
           env:
             - name: KAFKA_BOOTSTRAP_URLS
-              value: {{ .Values.kafka_cluster_name }}-kafka-bootstrap:9092
+              value: {{ .Values.kafka_boostrap_urls }}
       serviceAccountName: {{ .Values.serviceAccount.name }}
 ---
 apiVersion: apps/v1
@@ -216,7 +216,7 @@ spec:
               protocol: TCP
           env:
             - name: KAFKA_BOOTSTRAP_URLS
-              value: {{ .Values.kafka_cluster_name }}-kafka-bootstrap:9092
+              value: {{ .Values.kafka_boostrap_urls }}
       serviceAccountName: {{ .Values.serviceAccount.name }}
 ---
 apiVersion: apps/v1
@@ -257,7 +257,7 @@ spec:
               protocol: TCP
           env:
             - name: KAFKA_BOOTSTRAP_URLS
-              value: {{ .Values.kafka_cluster_name }}-kafka-bootstrap:9092
+              value: {{ .Values.kafka_boostrap_urls }}
             - name: QUARKUS_LOG_LEVEL
               value: {{ .Values.quarkus_log_level }}
       serviceAccountName: {{ .Values.serviceAccount.name }}
@@ -300,7 +300,7 @@ spec:
               protocol: TCP
           env:
             - name: KAFKA_BOOTSTRAP_SERVERS
-              value: {{ .Values.kafka_cluster_name }}-kafka-bootstrap:9092
+              value: {{ .Values.kafka_boostrap_urls }}
             - name: REST_URL
               value: http://quarkuscoffeeshop-web-{{ .Values.projectnamespace }}.apps.{{ .Values.domain }}
             - name: STREAM_URL
