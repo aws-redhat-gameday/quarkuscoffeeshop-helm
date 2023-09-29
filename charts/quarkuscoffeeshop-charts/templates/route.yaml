@@ -15,3 +15,21 @@ spec:
   path: /
   port:
     targetPort: 8080-tcp
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: quarkuscoffeeshop-customermocker
+  namespace: quarkuscoffeeshop-demo
+  labels:
+    app: quarkuscoffeeshop-customermocker
+    app.kubernetes.io/instance: coffeeshop
+    chart: quarkuscoffeeshop-charts-3.5.0
+    release: coffeeshop
+spec:
+  to:
+    kind: Service
+    name: quarkuscoffeeshop-customermocker
+  path: /
+  port:
+    targetPort: 8080-tcp
