@@ -122,7 +122,7 @@ spec:
               protocol: TCP
           env:
             - name: KAFKA_BOOTSTRAP_URLS
-              value: 'cafe-cluster-kafka-bootstrap:9092'
+              value: {{ .Values.kafka_boostrap_urls }}
             - name: PGSQL_URL
               value: {{ .Values.pgsql_url }}
             - name: PGSQL_USER
