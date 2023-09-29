@@ -1,0 +1,17 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: quarkuscoffeeshop-web
+  namespace: quarkuscoffeeshop-demo
+  labels:
+    app: quarkuscoffeeshop-web
+    app.kubernetes.io/instance: coffeeshop
+    chart: quarkuscoffeeshop-charts-3.5.0
+    release: coffeeshop
+spec:
+  to:
+    kind: Service
+    name: quarkuscoffeeshop-web
+  path: /
+  port:
+    targetPort: 8080-tcp
